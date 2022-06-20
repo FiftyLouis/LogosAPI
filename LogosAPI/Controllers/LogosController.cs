@@ -405,24 +405,6 @@ namespace LogosAPI.Controllers
             return new JsonResult(Ok(pm));
         }
 
-        //modif duration pm
-        [HttpPost("/ModifDuration")]
-        public JsonResult ModifDuration(int id, DateTime date){
-
-            var pm = _context.plannedmaintenance.Find(id);
-
-            if(pm == null){
-                return new JsonResult(NotFound());
-            }
-
-            _context.plannedmaintenance.Find(id).duration = date.ToString("t");
-            pm = _context.plannedmaintenance.Find(id);
-
-            _context.SaveChanges();
-
-            return new JsonResult(Ok(pm));
-        }
-
 
     }
 }

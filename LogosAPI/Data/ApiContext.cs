@@ -20,11 +20,12 @@ namespace LogosAPI.Data
             _configuration = configuration;
         }
 
-       protected override void OnConfiguring(DbContextOptionsBuilder options)
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             // connect to mysql with connection string from app settings
-            var connectionString = _configuration.GetConnectionString("DefaultConnection");
-            options.UseMySql(connectionString, MariaDbServerVersion.LatestSupportedServerVersion);
+            var connectionString = _configuration.GetConnectionString("LogosDataBase");
+            options.UseMySql(connectionString, MariaDbServerVersion.LatestSupportedServerVersion, options => options.EnableRetryOnFailure());
         }
+
     }
 }

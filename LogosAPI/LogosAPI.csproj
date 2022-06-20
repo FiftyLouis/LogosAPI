@@ -26,6 +26,4 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.18.0" />
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://json.schemastore.org/asconfig-schema.json" /></VisualStudio></ProjectExtensions>
-
 </Project>
